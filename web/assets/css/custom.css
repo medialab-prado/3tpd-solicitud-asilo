@@ -597,7 +597,7 @@ ul.buttons li {
  
 .expand {
  display: block !important;
- background-color: rgba(0,0,0,0.9);
+ background-color: rgba(63,98,133, 1);
  width: 200px; 
 }
 
