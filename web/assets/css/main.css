@@ -1,5 +1,5 @@
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:200,300,600,300italic,600italic");
 
 /*
 	Solid State by HTML5 UP
@@ -27,7 +27,7 @@
 	}
 
 	ol, ul {
-		list-style: none;
+		list-style: disc;
 	}
 
 	blockquote, q {
@@ -1624,8 +1624,7 @@
 
 	body {
 		background-color: #2e3141;
-		/*background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");*/
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.3), rgba(46, 49, 65, 0.3)), url("../../images/bg.jpg");
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
 		background-size: auto, cover;
 		background-attachment: fixed, fixed;
 		background-position: center, center;
@@ -2227,8 +2226,8 @@
 		}
 
 	ul {
-		list-style: disc;
-		margin: 0 0 2em 0;
+		list-style: no;
+		margin: -3px 0 1em 0;
 		padding-left: 1em;
 	}
 
@@ -2724,10 +2723,10 @@
 /* Header */
 
 	#header {
-		-moz-transition: background-color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out;
+		/*-moz-transition: background-color 0.2s ease-in-out;*/
+		/*-webkit-transition: background-color 0.2s ease-in-out;*/
+		/*-ms-transition: background-color 0.2s ease-in-out;*/
+		/*transition: background-color 0.2s ease-in-out;*/
 		background-color: rgba(53, 56, 73, 0.95);
 		height: 3.5em;
 		left: 0;
@@ -2739,11 +2738,26 @@
 		z-index: 10000;
 	}
 
+  nav ul.links {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;
+    -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s;
+    -ms-transition: opacity 0.2s ease-in-out, visibility 0.2s;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s;
+
+  }
+
+  nav ul.links li { display: inline; }
+
+
 		#header h1 {
-			-moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-			-webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-			-ms-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-			transition: opacity 0.2s ease-in-out, visibility 0.2s;
+			/*-moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;*/
+			/*-webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s;*/
+			/*-ms-transition: opacity 0.2s ease-in-out, visibility 0.2s;*/
+			/*transition: opacity 0.2s ease-in-out, visibility 0.2s;*/
 			border-bottom: 0;
 			font-size: 0.8em;
 			margin-bottom: 0;
@@ -2810,15 +2824,6 @@
 					#header nav a[href="#menu"]:active {
 						background-color: rgba(255, 255, 255, 0.075);
 					}
-
-		#header.alt {
-			background-color: transparent;
-		}
-
-			#header.alt h1 {
-				opacity: 0;
-				visibility: hidden;
-			}
 
 		@media screen and (max-width: 736px) {
 
@@ -3119,7 +3124,7 @@
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.3), rgba(46, 49, 65, 0.3)), url("../../images/bg.jpg");
+				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
 				background-size: auto, cover;
 				background-position: center, center;
 				margin-bottom: -6.5em;
@@ -3229,7 +3234,7 @@
 		#wrapper > header {
 			padding: 9em 0 6.25em 0 ;
 			/*background-color: #2e3141;*/
-			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.3), rgba(46, 49, 65, 0.3)), url("../../images/bg.jpg");
+			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
 			background-size: auto, cover;
 			background-position: center, 0% 30%;
 			margin-bottom: -6.5em;

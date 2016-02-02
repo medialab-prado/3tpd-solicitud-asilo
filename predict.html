@@ -34,34 +34,24 @@
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">El asilo en la UE: un derecho desigual.</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+        <header id="header" class="alt">
+          <h1><a href="index.html">El asilo en la UE: un derecho desigual</a></h1>
+          <nav>
+            <a href="index.html">Portada</a>
+            <a href="predict.html">Ponte en su lugar</a>
+            <a href="datos.html">Datos</a>
+            <a href="especialistas.html">Especialistas</a>
+            <a href="normativa.html">Normativa UE</a>
+            <a href="contacto.html">Contacto</a>
+          </nav>
+        </header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Portada</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="predict.html">¿Y tú?</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
 
 				<!-- Wrapper -->
-					<section id="wrapper">
+					<section id="wrapper" class="secondary-page">
 						<header>
 							<div class="inner">
-								<h2>¿Y tú?</h2>
+								<h2>Ponte en su lugar</h2>
 								<p>Averigua la probabilidad de que tu solicitud de asilo sea aceptada.</p>
 							</div>
 						</header>
@@ -71,7 +61,12 @@
 								<div class="inner">
 									
 									<section id="application">
-										<h3 class="major">Form</h3>
+										<div class="intro-metodologia">
+											<h3 class="predict-intro">La probabilidad, expresada en forma de porcentaje, se refiere al año 2015, y está basada en los datos de los últimos siete años (2008-2014) publicados por Eurostat. <br>Si alguna opción está deshabilitada, es porque no existen datos para esa combinación.<h3>
+
+											
+										</div>
+										<!-- <h3 class="major">Form</h3> -->
 										<div id="application-input">
 											<label class="select-title" for="origin">Origen</label>
 											<select class="select-origin">
@@ -91,9 +86,21 @@
 											</select>
 										</div>
 										
-										<div id="application-output"></div>
+										<div id="application-output">
+											<h3 class="probability rm"></h3>
+											<h4 class="interes rm"></h4>
+											<div class="table-wrapper">
+											</div>
+										</div>
 
 									</section>
+									<h3>Nota metodológica</h3>
+
+									<p>Los datos han sido tratados con <a target = "_blank" href="https://www.r-project.org/">R</a>.</p>
+
+									<p>En los casos en los que el dato del total de solicitantes de asilo no coincide con la suma de aceptados y rechazados, se ha considerado esta última operación como valor total. La diferencia en valor absoluto oscilaba ±5 refugiados.</p>
+
+									<p>La probabilidad se ha calculado realizando una regresión logística en base a los datos de aceptación de solicitudes de asilo de los últimos siete años (2008-2014).</p>
 								</div>
 							</div>
 
@@ -102,39 +109,11 @@
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="4"></textarea>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="fa-phone">(000) 000-0000</li>
-								<li class="fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="fa-facebook"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
+							
 							<ul class="copyright">
 								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>Refugiados-inmigrantes arrestados en el centro de detención de Filakio, Evros, Grecia. / By User:Ggia (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons.</li>
+							</ul>
 							</ul>
 						</div>
 					</section>
@@ -150,7 +129,7 @@
 		    var appTable = new AppTable('#application-output');
 		    appTable.loadData();
 
-		    d3.json('/web/data/select_data.json', function(error, jsonData){
+		    d3.json('http://medialab-prado.github.io/3tpd-asilo-ue/web/data/select_data.json', function(error, jsonData){
 				  if (error) throw error;
 
 				  var origin = jsonData.origin,
@@ -215,6 +194,18 @@
 			  });
 
 		  </script>
+
+
+		  <script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-71505225-1', 'auto');
+			  ga('send', 'pageview');
+
+			</script>
 			
 
 	</body>
