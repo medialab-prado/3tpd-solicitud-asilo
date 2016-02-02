@@ -27,7 +27,7 @@
 	}
 
 	ol, ul {
-		list-style: none;
+		list-style: disc;
 	}
 
 	blockquote, q {
@@ -2226,8 +2226,8 @@
 		}
 
 	ul {
-		list-style: disc;
-		margin: 0 0 2em 0;
+		list-style: no;
+		margin: -3px 0 1em 0;
 		padding-left: 1em;
 	}
 
