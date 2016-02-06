@@ -35,7 +35,7 @@
 	}
 
 	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
+		: '';content
 		content: none;
 	}
 
@@ -3295,7 +3295,7 @@
 		.wrapper:before, .wrapper:after {
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
-			content: '';
+		
 			display: block;
 			height: 6.5em;
 			position: absolute;
